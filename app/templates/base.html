@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaGen Farms IC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Heroicons CDN -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="flex bg-blue-50 min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-md hidden md:block">
+    <div class="p-6 text-xl font-bold text-blue-700 border-b border-blue-100">
+      AquaGen
+    </div>
+    <nav class="mt-6 space-y-2 px-4">
+      <a href="#" class="flex items-center gap-3 text-blue-700 hover:bg-blue-100 p-2 rounded">
+        <i data-feather="home"></i>
+        Dashboard
+      </a>
+      <a href="#" class="flex items-center gap-3 text-blue-700 hover:bg-blue-100 p-2 rounded">
+        <i data-feather="package"></i>
+        Inventory
+      </a>
+      <a href="#" class="flex items-center gap-3 text-blue-700 hover:bg-blue-100 p-2 rounded">
+        <i data-feather="check-square"></i>
+        Tasks
+      </a>
+      <a href="#" class="flex items-center gap-3 text-blue-700 hover:bg-blue-100 p-2 rounded">
+        <i data-feather="bar-chart-2"></i>
+        Sales
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-4">
+    <!-- Banner -->
+    <header class="bg-gradient-to-r from-blue-300 to-teal-300 text-white p-6 rounded-lg shadow text-center mb-6">
+      <h1 class="text-2xl md:text-3xl font-bold">AquaGen Farms IC</h1>
+      <p class="text-sm mt-1">Smart Aquaculture Dashboard</p>
+    </header>
+
+    <!-- Stat Cards -->
+    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-white p-4 rounded shadow text-center">
+        <h2 class="text-gray-500 text-sm">Fish Count</h2>
+        <p class="text-2xl font-semibold text-blue-600">12,450</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow text-center">
+        <h2 class="text-gray-500 text-sm">Feed Stock</h2>
+        <p class="text-2xl font-semibold text-blue-600">340 kg</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow text-center">
+        <h2 class="text-gray-500 text-sm">Water Quality</h2>
+        <p class="text-2xl font-semibold text-blue-600">Optimal</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow text-center">
+        <h2 class="text-gray-500 text-sm">Pending Tasks</h2>
+        <p class="text-2xl font-semibold text-blue-600">6</p>
+      </div>
+    </section>
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>
