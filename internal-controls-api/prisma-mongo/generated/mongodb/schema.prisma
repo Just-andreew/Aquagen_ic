@@ -1,0 +1,20 @@
+// ------------------
+// Prisma for MongoDB
+// ------------------
+generator mongoClient {
+  provider = "prisma-client-js"
+  output   = "./generated/mongodb"
+}
+
+datasource mongodb {
+  provider = "mongodb"
+  url      = env("MONGODB_URL")
+}
+
+// Example MongoDB model
+model Log {
+  id        String   @id @default(auto()) @map("_id") @mongodb.ObjectId
+  message   String
+  level     String
+  timestamp DateTime @default(now())
+}
